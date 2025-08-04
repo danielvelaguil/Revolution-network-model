@@ -66,11 +66,11 @@ for(y=0;y<nv2[h];y++)
 float clustering(){
 float conta;
 float conta2=0.0;
-for(int h=0;h<N;h+=10) // para todos los nodos h
+for(int h=0;h<N;h+=10) // 
  {
  conta=0.0;
  //conta2=0.0;
- for(int l=0;l<nv2[h];l++)// para todos los vecinos de h
+ for(int l=0;l<nv2[h];l++)//
    for(int h2=0;h2<int(nv2[neig2[h][l]]);h2++)// grado del vecino de h
     for(int l2=0;l2<int(nv2[neig2[neig2[h][l]][h2]]);l2++)// para todos los vecinos del vecino de h
      if(int(neig2[neig2[neig2[h][l]][h2]][l2])==int(h)) // ver si el vecino de mi vecino soy yo
@@ -99,7 +99,7 @@ for(int h=0;h<N;h+=10) // para todos los nodos h
 
 
 
-int mata_conexion(int h){ /// funcion que elimina todos los vecinos de h
+int mata_conexion(int h){ /// function that removes all neighbors of agent h 
   int g;
   int h2;
   float peso=0.0;
@@ -200,15 +200,15 @@ int evolution(float r,float sigma, int ns){
         firings[j][i]=1;
          }
 
-     if(s[j]==1)//si las neuronas se activaron checar si va ha ser inhibida (entra en estado estacionario)
+     if(s[j]==1)//if agents got activated check if inhibition is applied
       {
       contador[j]=1;
       for(q=0;q<nv2[j];q++)
-       if(neig2[j][q]>N) //verificar si tiene una neurona inhibidora conectada
+       if(neig2[j][q]>N) //check if agent has connections with oppresors 
         if(((double)rand()/((double)RAND_MAX+1.0))<matrizp2[j][q]*pmax*rep) //
          {n[j]+=0; // si es asi se incrementa el estado refractario
          //mata_conexion(j);
-         bandera[j]=1;//     pmax=2 sigma/k   si sigma=0 and K=10  pmax=0        si sigma=2 and K=10  pmax=0.2
+         bandera[j]=1;//     
          //cout<<"entro"<<endl;
          }
    //p[i]=sum(firings[:,i])/N)
@@ -247,7 +247,7 @@ int evolution(float r,float sigma, int ns){
    int va; //numero de vecinos activos
    if(sigma>-10.0)
    {
-   for(x=0;x<N;x++) /////////////////// nuevas conexiones /////////////////////////////////////////////
+   for(x=0;x<N;x++) /////////////////// new connections /////////////////////////////////////////////
    {
    // if(contador[x]>0)
     if(contador[x]>0) //el vecino de en medio no necesita estar activo
